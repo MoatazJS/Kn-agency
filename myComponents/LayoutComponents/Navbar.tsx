@@ -68,7 +68,7 @@ export default function Navbar() {
               ></Image>
             </Link>
           </div>
-          <div className="flex gap-8">
+          <div className="hidden lg:flex gap-8">
             <ul className="flex gap-8">
               {navLinks.map((link) => {
                 return (
@@ -87,6 +87,11 @@ export default function Navbar() {
               })}
             </ul>
           </div>
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          ></button>
         </div>
       </nav>
     </>
