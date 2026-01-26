@@ -60,6 +60,7 @@ export default function Navbar() {
                 className={cn(
                   "h-12 w-auto object-contain transition-all duration-300",
                   scrolled ? "invert" : "",
+                  menuOpen ? "invert" : "",
                 )}
                 src={"/KnLogo-removebg.png"}
                 width={62}
