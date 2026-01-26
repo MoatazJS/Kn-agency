@@ -37,7 +37,27 @@ export default function CreateSection() {
               What We Create
             </h2>
           </div>
-          <div></div>
+          <div>
+            <div className="flex flex-col flex-1">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="group flex flex-col md:flex-row items-baseline md:items-center py-12 border-b border-kn-gray-light last:border-none transition-all duration-500 hover:pl-8"
+                  // Hover effect: slight padding left movement
+                >
+                  <span className="text-sm font-mono text-kn-gray mr-8 md:w-24">
+                    {service.id}
+                  </span>
+                  <h3 className="text-4xl md:text-6xl font-bold font-heading text-kn-black uppercase tracking-tight flex-1 group-hover:text-kn-gray-dark transition-colors">
+                    {service.name}
+                  </h3>
+                  <p className="mt-4 md:mt-0 text-kn-gray text-lg md:text-right md:w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    {service.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
