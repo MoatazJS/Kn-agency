@@ -142,12 +142,59 @@ export default function Navbar() {
             menuOpen ? "opacity-100" : "opacity-0",
           )}
         />
+        {/* menu content  */}
         <div
           className={cn(
             "relative h-full flex flex-col items-center justify-center transition-all duration-500 delay-100",
             menuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
-        ></div>
+        >
+          <nav className="flex flex-col items-center gap-8 md:gap-10">
+            {navLinks.map((item, index) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={closeMenu}
+                className={cn(
+                  "group relative text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wider transition-all duration-300",
+                  "text-kn-white hover:text-kn-gray",
+                  pathname === item.href && "text-kn-gray",
+                  menuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0",
+                )}
+                style={{
+                  transitionDelay: menuOpen ? `${index * 100 + 200}ms` : "0ms",
+                }}
+              >
+                {/* Animated underline */}
+                <span className="relative">
+                  {item.name}
+                  <span
+                    className={cn(
+                      "absolute -bottom-2 left-0 h-1 bg-kn-gray transition-all duration-300",
+                      "group-hover:w-full",
+                      pathname === item.href ? "w-full" : "w-0",
+                    )}
+                  />
+                </span>
+
+                {/* Glow effect on hover */}
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl bg-kn-white" />
+              </Link>
+            ))}
+          </nav>
+          <div
+            className={cn(
+              "absolute bottom-12 text-kn-gray text-sm uppercase tracking-widest transition-all duration-500",
+              menuOpen
+                ? "translate-y-0 opacity-100 delay-500"
+                : "translate-y-4 opacity-0",
+            )}
+          >
+            Kn Agency
+          </div>
+        </div>
       </div>
     </>
   );
