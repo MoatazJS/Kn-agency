@@ -91,9 +91,64 @@ export default function Navbar() {
             onClick={toggleMenu}
             className="lg:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-          ></button>
+          >
+            {/* Burger */}
+            <span
+              className={cn(
+                "w-7 h-0.5 transition-all duration-300 ease-in-out",
+                menuOpen
+                  ? "rotate-45 translate-y-2 bg-kn-white"
+                  : scrolled
+                    ? "bg-kn-white"
+                    : "bg-kn-black",
+              )}
+            />
+            <span
+              className={cn(
+                "w-7 h-0.5 transition-all duration-300 ease-in-out",
+                menuOpen
+                  ? "opacity-0"
+                  : scrolled
+                    ? "bg-kn-white"
+                    : "bg-kn-black",
+              )}
+            />
+            <span
+              className={cn(
+                "w-7 h-0.5 transition-all duration-300 ease-in-out",
+                menuOpen
+                  ? "-rotate-45 -translate-y-2 bg-kn-white"
+                  : scrolled
+                    ? "bg-kn-white"
+                    : "bg-kn-black",
+              )}
+            />
+          </button>
         </div>
       </nav>
+      {/* Links Modal  */}
+      <div
+        className={cn(
+          "fixed inset-0 z-40 lg:hidden transition-all duration-500 ease-in-out",
+          menuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
+        )}
+      >
+        <div
+          onClick={closeMenu}
+          className={cn(
+            "absolute inset-0 bg-gradient-to-br from-kn-black via-kn-gray-dark to-kn-gray-light transition-opacity duration-500",
+            menuOpen ? "opacity-100" : "opacity-0",
+          )}
+        />
+        <div
+          className={cn(
+            "relative h-full flex flex-col items-center justify-center transition-all duration-500 delay-100",
+            menuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
+          )}
+        ></div>
+      </div>
     </>
   );
 }
