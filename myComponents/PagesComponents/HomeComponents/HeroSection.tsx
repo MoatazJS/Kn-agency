@@ -4,20 +4,17 @@ export default function HeroSection() {
   return (
     <section className="relative pt-36 min-h-screen w-full flex flex-col justify-center items-center px-6 bg-kn-white overflow-hidden">
       <div className="max-w-6xl mx-auto text-center z-10 space-y-12">
-        {/* Main Statement */}
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-bold font-heading tracking-tighter text-kn-black leading-[0.9] uppercase">
           Cinematic Stories. <br />
           Strategic Impact.
         </h1>
 
-        {/* Sub-statement (Minimal) */}
         <p className="text-lg md:text-xl text-kn-gray tracking-wide max-w-2xl mx-auto">
           A full‑service creative production house merging film precision with
           digital mastery.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center pt-8">
+        <div className="flex flex-col md:flex-row gap-6 justify-center py-8">
           <Button variant="primary">View Our Work</Button>
         </div>
       </div>
