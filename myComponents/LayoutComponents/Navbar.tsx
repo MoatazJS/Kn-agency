@@ -40,21 +40,33 @@ export default function Navbar() {
           scrolled ? "bg-kn-black py-4" : "bg-transparent py-8",
         )}
       >
-        <div className=" flex mx-32 items-center h-28 justify-between bg-white">
+        <div className=" container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div>
             <Image
+              className={cn(
+                "h-12 w-auto object-contain transition-all duration-300",
+                scrolled ? "invert" : "",
+              )}
               src={"/KnLogo-removebg.png"}
               width={62}
               height={62}
               alt="Kn Logo"
             ></Image>
           </div>
-          <div>
+          <div className="flex gap-8">
             <ul className="flex gap-8">
               {navLinks.map((link) => {
                 return (
                   <li key={link.id}>
-                    <Link href={link.href}>{link.name}</Link>
+                    <Link
+                      className={cn(
+                        "text-sm font-medium uppercase tracking-widest transition-colors duration-300 hover:opacity-70",
+                        scrolled ? "text-kn-white" : "text-kn-black",
+                      )}
+                      href={link.href}
+                    >
+                      {link.name}
+                    </Link>
                   </li>
                 );
               })}
