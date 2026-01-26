@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { clsx, type ClassValue } from "clsx";
+import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -17,7 +18,8 @@ export default function Navbar() {
   ];
 
   const [scrolled, setScrolled] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -31,7 +33,18 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
-
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menuOpen]);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
   return (
     <>
       <nav
@@ -42,16 +55,18 @@ export default function Navbar() {
       >
         <div className=" container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div>
-            <Image
-              className={cn(
-                "h-12 w-auto object-contain transition-all duration-300",
-                scrolled ? "invert" : "",
-              )}
-              src={"/KnLogo-removebg.png"}
-              width={62}
-              height={62}
-              alt="Kn Logo"
-            ></Image>
+            <Link href="/" className="relative z-[60]">
+              <Image
+                className={cn(
+                  "h-12 w-auto object-contain transition-all duration-300",
+                  scrolled ? "invert" : "",
+                )}
+                src={"/KnLogo-removebg.png"}
+                width={62}
+                height={62}
+                alt="Kn Logo"
+              ></Image>
+            </Link>
           </div>
           <div className="flex gap-8">
             <ul className="flex gap-8">
