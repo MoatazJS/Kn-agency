@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import ProjectCard from "./ProjectCard";
 
+const Projects = [{ title: "title1", description: "desc1", image: "image1" }];
 export default function WorkSection() {
   return (
     <>
@@ -20,7 +22,9 @@ export default function WorkSection() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">cards</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ProjectCard />
+          </div>
         </div>
       </section>
     </>
