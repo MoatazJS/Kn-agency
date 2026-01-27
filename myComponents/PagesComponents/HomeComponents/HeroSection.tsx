@@ -19,7 +19,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Background - Optional Texture or Grain can be added here */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-noise opacity-20"></div>
     </section>
   );
