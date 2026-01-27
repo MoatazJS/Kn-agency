@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { WorkCardProps } from "@/lib/interfaces/interface";
 import Image from "next/image";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { WorkCardProps } from "@/lib/interfaces/interface";
+
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -26,8 +26,6 @@ const rotations = [
 ];
 
 export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   // Assign colors and rotations based on index for variety
   const accentClass = colorAccents[index % colorAccents.length];
   const rotationClass = rotations[index % rotations.length];
@@ -36,22 +34,19 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
     <div
       className={cn(
         "group relative w-full overflow-hidden",
-        "transition-all duration-500 ease-out",
+        "transition-all duration-300 ease-out",
         "cursor-pointer",
-        !isHovered && rotationClass,
-        isHovered && "rotate-0 scale-105 z-10",
+        rotationClass,
+        "hover:rotate-0 hover:scale-105 hover:z-10",
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Card */}
       <div
         className={cn(
           "relative border-4 bg-kn-black",
-          "transition-all duration-500",
+          "transition-shadow duration-300",
           accentClass,
-          "shadow-2xl",
-          isHovered && "shadow-3xl",
+          "shadow-2xl hover:shadow-3xl",
         )}
       >
         {/* Image Container */}
@@ -62,9 +57,10 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
               alt={title}
               fill
               className={cn(
-                "object-cover transition-all duration-700",
+                "object-cover transition-all duration-500 ease-out",
                 "grayscale group-hover:grayscale-0",
                 "scale-100 group-hover:scale-110",
+                "will-change-transform",
               )}
             />
           ) : (
@@ -84,7 +80,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
           <div
             className={cn(
               "absolute inset-0 bg-linear-to-t from-kn-black via-kn-black/50 to-transparent",
-              "transition-opacity duration-500",
+              "transition-opacity duration-300",
               "opacity-60 group-hover:opacity-80",
             )}
           />
@@ -95,7 +91,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
           {/* Decorative Line */}
           <div
             className={cn(
-              "absolute top-0 left-0 h-1 bg-linear-to-r transition-all duration-500",
+              "absolute top-0 left-0 h-1 bg-linear-to-r transition-all duration-300 ease-out",
               index % 4 === 0 && "from-kn-gray-light to-kn-gray",
               index % 4 === 1 && "from-kn-gray to-kn-white",
               index % 4 === 2 && "from-kn-gray-dark to-kn-gray-light",
@@ -109,7 +105,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
             <span
               className={cn(
                 "inline-block px-3 py-1 text-xs uppercase tracking-widest",
-                "border transition-all duration-300",
+                "border transition-all duration-200",
                 "text-kn-gray-light border-kn-gray-light/30",
                 "group-hover:text-kn-white group-hover:border-kn-white",
                 "group-hover:bg-kn-white/10",
@@ -123,8 +119,9 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
           <h3
             className={cn(
               "text-3xl md:text-4xl font-bold font-heading",
-              "text-kn-white transition-all duration-300",
+              "text-kn-white transition-transform duration-200 ease-out",
               "group-hover:translate-x-2",
+              "will-change-transform",
             )}
           >
             {title}
@@ -133,7 +130,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
           {/* Animated Underline */}
           <div
             className={cn(
-              "h-0.5 bg-kn-white mt-4 transition-all duration-500",
+              "h-0.5 bg-kn-white mt-4 transition-all duration-300 ease-out",
               "w-0 group-hover:w-16",
             )}
           />
@@ -142,8 +139,9 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
           <div
             className={cn(
               "absolute bottom-6 right-6 md:bottom-8 md:right-8",
-              "text-kn-white text-2xl transition-all duration-300",
+              "text-kn-white text-2xl transition-all duration-200 ease-out",
               "opacity-0 translate-x-2.5 group-hover:opacity-100 group-hover:translate-x-0",
+              "will-change-transform will-change-opacity",
             )}
           >
             →
@@ -154,7 +152,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
         <div
           className={cn(
             "absolute top-0 right-0 w-16 h-16",
-            "transition-all duration-500",
+            "transition-opacity duration-300",
             "opacity-0 group-hover:opacity-100",
           )}
         >
@@ -174,7 +172,7 @@ export function WorkCard({ title, category, imageSrc, index }: WorkCardProps) {
       {/* Floating Shadow Effect */}
       <div
         className={cn(
-          "absolute inset-0 -z-10 blur-xl transition-opacity duration-500",
+          "absolute inset-0 -z-10 blur-xl transition-opacity duration-300",
           "opacity-0 group-hover:opacity-50",
           index % 4 === 0 && "bg-kn-gray-light",
           index % 4 === 1 && "bg-kn-gray",
