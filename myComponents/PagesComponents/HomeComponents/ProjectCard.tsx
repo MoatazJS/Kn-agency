@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-
+import { ProjectCardProps } from "@/lib/interfaces/interface";
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -16,7 +16,7 @@ export function ProjectCard({
       className={cn(
         "group relative w-full border border-kn-gray-light bg-kn-white p-8", // Default styles
         "hover:bg-kn-gray-dark hover:border-kn-black transition-colors duration-500", // Hover effect
-        "flex flex-col justify-between h-[400px]",
+        "flex flex-col justify-between h-100",
         "cursor-pointer",
         className,
       )}
