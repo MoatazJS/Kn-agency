@@ -4,3 +4,9 @@ export interface ProjectCardProps {
   imageSrc?: string;
   className?: string;
 }
+export interface WorkCardProps {
+  title: string;
+  category: string;
+  imageSrc?: string;
+  index: number;
+}
