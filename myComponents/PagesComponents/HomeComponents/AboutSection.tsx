@@ -18,7 +18,7 @@ export default function AboutSection() {
           filmmakers, directors, and producers who merge cinematic precision
           with digital mastery.
         </h3>
-        <p className="text-xl text-kn-gray max-w-2xl">
+        <p className="text-xl text-kn-gray-dark max-w-2xl">
           We craft high‑end visual experiences for brands across Egypt and the
           Gulf, where every frame serves both art and strategy.
         </p>

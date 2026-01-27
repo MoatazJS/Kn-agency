@@ -55,7 +55,7 @@ export default function page() {
                 <h4 className="text-2xl font-bold font-heading text-kn-black mb-4">
                   Precision
                 </h4>
-                <p className="text-kn-gray text-lg">
+                <p className="text-kn-gray-dark text-lg">
                   We believe in the power of detail. Every shot, every cut, and
                   every pixel is intentional.
                 </p>
@@ -64,7 +64,7 @@ export default function page() {
                 <h4 className="text-2xl font-bold font-heading text-kn-black mb-4">
                   Impact
                 </h4>
-                <p className="text-kn-gray text-lg">
+                <p className="text-kn-gray-dark text-lg">
                   Design and film are tools for influence. We create work that
                   drives action and emotion.
                 </p>
@@ -73,7 +73,7 @@ export default function page() {
                 <h4 className="text-2xl font-bold font-heading text-kn-black mb-4">
                   Simplicity
                 </h4>
-                <p className="text-kn-gray text-lg">
+                <p className="text-kn-gray-dark text-lg">
                   Complexity is easy; simplicity is hard. We strive for elegance
                   and clarity in all we do.
                 </p>
@@ -82,7 +82,7 @@ export default function page() {
                 <h4 className="text-2xl font-bold font-heading text-kn-black mb-4">
                   Innovation
                 </h4>
-                <p className="text-kn-gray text-lg">
+                <p className="text-kn-gray-dark text-lg">
                   We stay ahead of the curve, embracing new technologies and
                   techniques to tell better stories.
                 </p>
