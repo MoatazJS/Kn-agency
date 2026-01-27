@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-end border-t border-kn-gray-dark pt-12">
             <div className="flex flex-col gap-4">
               <span className="text-2xl font-bold font-heading tracking-tight">
-                K NETWORK
+                Kn Agency
               </span>
               <p className="text-kn-gray text-sm">
                 &copy; {new Date().getFullYear()} K Network. All rights
@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-8 mt-8 md:mt-0">
-              {["Instagram", "Twitter", "LinkedIn", "Email"].map((link) => (
+              {["Instagram", "Twitter"].map((link) => (
                 <a
                   key={link}
                   href="#"
