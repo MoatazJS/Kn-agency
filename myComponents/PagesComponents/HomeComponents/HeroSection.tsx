@@ -9,7 +9,7 @@ export default function HeroSection() {
           Strategic Impact.
         </h1>
 
-        <p className="text-lg md:text-xl text-kn-gray tracking-wide max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-kn-gray-dark tracking-wide max-w-2xl mx-auto">
           A full‑service creative production house merging film precision with
           digital mastery.
         </p>

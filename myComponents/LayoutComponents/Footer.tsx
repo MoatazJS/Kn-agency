@@ -26,7 +26,7 @@ export default function Footer() {
                 Kn Agency
               </span>
               <p className="text-kn-gray text-sm">
-                &copy; {new Date().getFullYear()} K Network. All rights
+                &copy; {new Date().getFullYear()} Kn Agency. All rights
                 reserved.
               </p>
             </div>

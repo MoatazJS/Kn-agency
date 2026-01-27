@@ -23,7 +23,7 @@ export default function page() {
                 filmmakers, directors, and producers who merge cinematic
                 precision with digital mastery.
               </h3>
-              <div className="text-xl md:text-2xl text-kn-gray space-y-8">
+              <div className="text-xl md:text-2xl text-kn-gray-dark space-y-8">
                 <p>
                   We craft high‑end visual experiences for brands across Egypt
                   and the Gulf, where every frame serves both art and strategy.
