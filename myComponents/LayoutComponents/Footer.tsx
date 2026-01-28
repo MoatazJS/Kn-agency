@@ -20,9 +20,9 @@ export default function Footer() {
           </div>
 
           {/* Footer Bottom */}
-          <div className="flex flex-col md:flex-row justify-between items-end border-t border-kn-gray-dark pt-12">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end border-t border-kn-gray-dark pt-12">
             <div className="flex flex-col gap-4">
-              <span className="text-2xl font-bold font-heading tracking-tight">
+              <span className="text-2xl font-bold font-heading tracking-tight text-center">
                 Kn Agency
               </span>
               <p className="text-kn-gray text-sm">

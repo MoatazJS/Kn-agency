@@ -55,7 +55,7 @@ export default function Navbar() {
       >
         <div className=" container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div>
-            <Link href="/" className="relative z-[60]">
+            <Link href="/" className="relative z-60">
               <Image
                 className={cn(
                   "h-12 w-auto object-contain transition-all duration-300",
@@ -90,7 +90,7 @@ export default function Navbar() {
           </div>
           <button
             onClick={toggleMenu}
-            className="lg:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
+            className="lg:hidden relative z-60 w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             {/* Burger */}
@@ -139,7 +139,7 @@ export default function Navbar() {
         <div
           onClick={closeMenu}
           className={cn(
-            "absolute inset-0 bg-gradient-to-br from-kn-black via-kn-gray-dark to-kn-gray-light transition-opacity duration-500",
+            "absolute inset-0 bg-linear-to-br from-kn-black via-kn-gray-dark to-kn-gray-light transition-opacity duration-500",
             menuOpen ? "opacity-100" : "opacity-0",
           )}
         />
